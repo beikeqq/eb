@@ -1,34 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>COMING SOON</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everbridge Business Advisory Limited</title>
     <style>
-        html, body {
-            height: 100%;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #F8FAFC;
         }
-        .center-message {
-            font-size: 2.5rem;
-            color: #333;
-            letter-spacing: 2px;
-            font-weight: 600;
+        
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+        }
+        
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        
+        nav a {
+            display: block;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #1B3B6F;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #F59E42;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #E8C547 0%, #F59E42 50%, #1B3B6F 100%);
+            background-image: url('hk-bg.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1B3B6F;
+            border-bottom: 3px solid #E8C547;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        /* About Section */
+        #about {
+            background: white;
+        }
+        
+        #about h2 {
+            width: 100%;
+        }
+        
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        /* Services Section */
+        #services {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: #F5F7FA;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #E8C547;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(27, 59, 111, 0.15);
+        }
+        
+        .service-card h3 {
+            color: #1B3B6F;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: #f0f4f8;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+        }
+        
+        .contact-info p {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .contact-info a {
+            color: #1B3B6F;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #F59E42;
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1B3B6F;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin: 8px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+        
+        .footer-copyright {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            section h2 {
+                font-size: 28px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="center-message">
-        COMING SOON
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Everbridge Business Advisory Limited</h1>
+            <p>Global Insight · Trusted Partner</p>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-text">
+            <p>Everbridge Business Advisory Limited, established in Hong Kong, was founded by a professional team with strong backgrounds in technology, finance, and management. The team has accumulated extensive experience in multinational enterprises and entrepreneurial ventures, covering fields such as engineering equipment, information technology, financial management, and corporate operations. With interdisciplinary expertise and broad resource integration capabilities, the team provides clients with comprehensive and reliable support.</p>
+            <p style="margin-top: 20px;">The company's business is carried out through corporate strategy consulting, project management consulting, software development consulting, and equipment procurement services, offering in-depth advisory and integrated solutions. Everbridge focuses on serving enterprise clients, undertaking cross-border business involving international investment, global projects, and international trade. By assisting clients in system development and strategic expansion, Everbridge is committed to becoming a trusted partner in global competition.</p>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Corporate Strategy Consulting</h3>
+                <p>Strategic analysis and formulation of corporate development directions, optimization of organizational structure, and guidance for enterprises to achieve long-term vision and strategic objectives.</p>
+            </div>
+            <div class="service-card">
+                <h3>Project Management Consulting</h3>
+                <p>Professional project consulting throughout the entire lifecycle from planning, organization, implementation to monitoring and delivery, ensuring projects are completed on time with quality objectives achieved.</p>
+            </div>
+            <div class="service-card">
+                <h3>Software Development Consulting</h3>
+                <p>Expert consulting on software architecture, system design, digital transformation, and technology innovation to help enterprises leverage modern technology and improve operational efficiency.</p>
+            </div>
+            <div class="service-card">
+                <h3>Equipment Procurement Services</h3>
+                <p>Comprehensive procurement consulting and solutions for engineering equipment and corporate operational materials, ensuring cost-effectiveness and supply chain optimization.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>We welcome any inquiries. Feel free to contact us</p>
+                <p style="margin-top: 30px;">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:info@everbridgehk.com">info@everbridgehk.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>Everbridge Business Advisory Limited</strong></p>
+            <p>Established in Hong Kong</p>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright"><span id="year"></span> Everbridge Business Advisory Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = '© ' + new Date().getFullYear();
+    </script>
 </body>
 </html>
